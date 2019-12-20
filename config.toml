@@ -1,7 +1,7 @@
 baseURL = "https://apediderot.gitlab.io/"
 languageCode = "fr-fr"
 title = "APE - Diderot"
-theme = "minimal"
+theme = "ape-bootstrap4"
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = ""
 
@@ -10,14 +10,11 @@ googleAnalytics = ""
     githubUsername = "#"
     accent = "#721e77"
     showBorder = true
-    # backgroundColor = "#cbffaa"
+    # backgroundColor = "#eee"
     font = "Raleway" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
     profilePic = "/images/APE-Diderot.svg"
-    copyright = "Créé avec [Hugo](https://gohugo.io) et le thème [Minimal](https://github.com/calintat/minimal)."
-    css = ["css/ape.css"]
+    copyright = "Créé avec [Hugo](https://gohugo.io)."
+    # css = ["css/ape.css"]
 
 [[menu.main]]
     url = "/"
@@ -25,13 +22,13 @@ googleAnalytics = ""
     weight = 1
 
 [[menu.main]]
-    url = "/ape/"
-    name = "APE"
+    url = "/actu/"
+    name = "Actualités"
     weight = 2
 
 [[menu.main]]
-    url = "/actu/"
-    name = "Actualités"
+    url = "/ape/"
+    name = "APE"
     weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.

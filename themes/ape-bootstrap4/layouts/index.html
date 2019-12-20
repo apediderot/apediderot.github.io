@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main class="flex-fill text-center pt-5">
+  <div class="intro">
+    {{ with .Site.Params.profilePic }} <img class="w-50 p-3" src="{{ . }}"> {{ end }}
+    <h1>{{ .Site.Title }}</h1>
+    <h2>{{ markdownify .Site.Params.Description }}</h2>
+    {{ with .Content -}}
+      <div class="homepage-content text-justify">{{ . }}</div>
+    {{- end }}
+  </div>
+</main>
+{{ end }}

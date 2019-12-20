@@ -1,0 +1,35 @@
+{{ $breakpoint := "md" -}}
+<nav class="navbar navbar-expand-{{$breakpoint}} fixed-top navbar-light bg-light">
+  <a class="navbar-brand d-{{$breakpoint}}-none" href="#">{{ .Title }}</a>
+  <div class="d-flex flex-row order-2 order-{{$breakpoint}}-3 px-2">
+  {{ if .Site.Menus.icon }}
+    <ul class="navbar-nav flex-row">
+    {{ range sort .Site.Menus.icon }}
+      <li class="nav-item">
+          <a class="nav-link px-2"  href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a>
+      </li>
+    {{ end }}
+    </ul>
+  {{ end }}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse order-3 order-{{$breakpoint}}-2 px-3" id="mainmenu">
+  {{ if .Site.Menus.main }}
+    <ul class="navbar-nav mr-auto">
+    {{ $currentPage := . }}
+    {{ range sort .Site.Menus.main }}
+    {{ $active := "" }}
+    {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+      {{ $active = "active" }}
+    {{end}}
+      <li class="nav-item">
+        <a class="nav-link px-3 {{$active}}" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+    </ul>
+  {{ end }}
+  </div>
+</nav>

@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <main>
+    <h2>{{ .Title }}</h2>
+    <h5>{{ .Description }}</h5>
+    {{ range (.Paginator 4).Pages }} {{ partial "list-item" . }} {{ end }}
+  </main>
+  {{ partial "paginator" . }}
+{{ end }}

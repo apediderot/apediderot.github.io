@@ -1,0 +1,5 @@
+{{if .Params.prénom -}}
+  <a href="{{.RelPermalink}}">{{.Params.prénom}} {{.Params.nom | upper}}</a>
+{{- else -}}
+  {{ .Title }}
+{{- end}}

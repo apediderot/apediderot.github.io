@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main>
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ partial "date_fr" (.Date.Format (.Site.Params.dateFormat | default "2 January 2006"))}}</h5>
+        {{ partial "tags" . }}
+    </div>
+    <div align="start" class="content">{{ .Content }}</div>
+
+    <!-- actu liées -->
+    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "actu") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    {{ if $related }}
+        <h4 class="page-header">À lire aussi</h4>
+        {{ range $related }} {{ partial "list-item" . }} {{ end }}
+    {{ end }}
+
+</main>
+{{ end }}

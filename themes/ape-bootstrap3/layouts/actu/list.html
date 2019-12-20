@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <main class="actu-list">
+      <h2>{{ .Title }}</h2>
+      {{ range (.Paginator 4).Pages }} {{ partial "list-item" . }} {{ end }}
+      {{ partial "paginator" . }}
+    </main>
+    <aside class="twitter">
+      {{ partial "twitter" "lifehacker" }}
+    </aside>
+{{ end }}

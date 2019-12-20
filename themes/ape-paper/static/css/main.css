@@ -1,0 +1,56 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 55px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+main {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 750px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Homepage */
+
+.intro > h1 {
+    color: #212121;
+    font-size: 12vh;
+}
+
+.intro > h2 {
+    color: #757575;
+    font-size: 3vmin;
+}
+
+/* Page content */
+
+.content {
+    padding-top: 10px;
+    padding-botton: 10px;
+}
+
+/* Liste content */
+
+.subheader {
+  color: lightgray;
+}
+
+
+/* Profile picture */
+
+.profile {
+    width: 70vh;
+    height: 35vh;
+    border: none;
+    display: inline-block;
+}
